@@ -1,0 +1,177 @@
+export type TerrainType = 'plains' | 'desert' | 'ocean' | 'mountains';
+export type TimeOfDay = 'day' | 'dusk' | 'night';
+export type EnemyType = 'basic' | 'advanced' | 'boss';
+
+export interface Level {
+  id: number;
+  name: string;
+  codename: string;
+  briefing: string[];
+  mapX: number;
+  mapY: number;
+  enemyCount: number;
+  enemyType: EnemyType;
+  terrain: TerrainType;
+  timeOfDay: TimeOfDay;
+  objective: string;
+  requiredKills: number;
+  skyColor: string;
+  fogColor: string;
+  groundColor: string;
+}
+
+export const LEVELS: Level[] = [
+  {
+    id: 1,
+    name: 'OPERATION SCRAMBLE',
+    codename: 'LEVEL 01',
+    briefing: [
+      'INTEL REPORT — CLASSIFIED',
+      '',
+      'Unknown hostiles have entered our airspace.',
+      'Your mission: intercept and eliminate all',
+      'enemy fighters before they reach the coast.',
+      '',
+      'Weapons: 20mm cannon, 4x Sidewinder missiles',
+      'Enemy threat level: LOW',
+      '',
+      'Good luck, pilot. The skies are yours.',
+    ],
+    mapX: 120,
+    mapY: 200,
+    enemyCount: 4,
+    enemyType: 'basic',
+    terrain: 'plains',
+    timeOfDay: 'day',
+    objective: 'DESTROY ALL ENEMY FIGHTERS',
+    requiredKills: 4,
+    skyColor: '#4a7fc1',
+    fogColor: '#8ab4d4',
+    groundColor: '#3a5c2a',
+  },
+  {
+    id: 2,
+    name: 'DESERT FURY',
+    codename: 'LEVEL 02',
+    briefing: [
+      'INTEL REPORT — CLASSIFIED',
+      '',
+      'Enemy air command has established a stronghold',
+      'over the desert region. Strike fast and hard.',
+      '',
+      'Enemy patrols are more coordinated this time.',
+      'Watch your six — they will engage aggressively.',
+      '',
+      'Weapons: 20mm cannon, 6x Sidewinder missiles',
+      'Enemy threat level: MEDIUM',
+      '',
+      'Dust yourself off and get it done.',
+    ],
+    mapX: 260,
+    mapY: 150,
+    enemyCount: 6,
+    enemyType: 'basic',
+    terrain: 'desert',
+    timeOfDay: 'dusk',
+    objective: 'ELIMINATE ALL DESERT PATROL UNITS',
+    requiredKills: 6,
+    skyColor: '#c4703a',
+    fogColor: '#d4916a',
+    groundColor: '#8b6914',
+  },
+  {
+    id: 3,
+    name: 'NIGHT WOLVES',
+    codename: 'LEVEL 03',
+    briefing: [
+      'INTEL REPORT — CLASSIFIED',
+      '',
+      'Under cover of darkness, enemy ace squadron',
+      '"Night Wolves" has launched. These are the best',
+      'their side has to offer.',
+      '',
+      'Your radar is your only friend out there.',
+      'Trust your instruments. Trust your training.',
+      '',
+      'Weapons: 20mm cannon, 8x Sidewinder missiles',
+      'Enemy threat level: HIGH',
+      '',
+      'The night belongs to whoever takes it.',
+    ],
+    mapX: 380,
+    mapY: 220,
+    enemyCount: 5,
+    enemyType: 'advanced',
+    terrain: 'mountains',
+    timeOfDay: 'night',
+    objective: 'NEUTRALIZE THE NIGHT WOLVES SQUADRON',
+    requiredKills: 5,
+    skyColor: '#0a0a1a',
+    fogColor: '#1a1a2e',
+    groundColor: '#1a2a1a',
+  },
+  {
+    id: 4,
+    name: 'PACIFIC THUNDER',
+    codename: 'LEVEL 04',
+    briefing: [
+      'INTEL REPORT — CLASSIFIED',
+      '',
+      'Enemy air power is massing over the Pacific.',
+      'Fleet command needs those skies cleared NOW.',
+      '',
+      'Six advanced enemy jets plus the infamous',
+      '"Red Baron" — their most decorated ace.',
+      '',
+      'Take him down. Send a message.',
+      '',
+      'Weapons: 20mm cannon, 8x AMRAAMs',
+      'Enemy threat level: VERY HIGH',
+      '',
+      "This one's for the fleet. Don't come back empty.",
+    ],
+    mapX: 480,
+    mapY: 140,
+    enemyCount: 7,
+    enemyType: 'advanced',
+    terrain: 'ocean',
+    timeOfDay: 'day',
+    objective: 'CLEAR PACIFIC AIRSPACE — DEFEAT RED BARON',
+    requiredKills: 7,
+    skyColor: '#2a6fa8',
+    fogColor: '#5a9fd4',
+    groundColor: '#1a3a6a',
+  },
+  {
+    id: 5,
+    name: 'ACE OF ACES',
+    codename: 'FINAL MISSION',
+    briefing: [
+      'INTEL REPORT — CLASSIFIED — EYES ONLY',
+      '',
+      'One enemy remains. "THE PHANTOM."',
+      '',
+      'No rank. No unit. No country.',
+      'Just a pilot — the best the world has ever seen.',
+      '',
+      'He has been watching you. Learning.',
+      'Every mission. Every maneuver. Every kill.',
+      '',
+      'This ends here. In the sky. One on one.',
+      'Weapons: Everything. Ammo: Unlimited.',
+      '',
+      'There can only be one Ace of Aces.',
+    ],
+    mapX: 560,
+    mapY: 280,
+    enemyCount: 3,
+    enemyType: 'boss',
+    terrain: 'mountains',
+    timeOfDay: 'dusk',
+    objective: 'DEFEAT THE PHANTOM',
+    requiredKills: 3,
+    skyColor: '#8b3a1a',
+    fogColor: '#c4603a',
+    groundColor: '#4a2a1a',
+  },
+];
